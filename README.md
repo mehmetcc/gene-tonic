@@ -24,7 +24,7 @@ After that, we have to compile the model and generate a single Specimen.
 ```scala
 Specimen(NeuralNetworkBuilder.build(NeuralNetworkModel(nodes, layerSize, activation, optimizer, 0.0)))
 ```
-After having as many specimens we want, we have to construct a specimen list and pass it into a Population object:
+After having as many specimens as we want, we have to construct a specimen list and pass it into a Population object:
 ```scala
 ...
 // somewhere in your main
