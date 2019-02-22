@@ -92,8 +92,8 @@ object Population {
 
     def go(iterSize: Int, currList: List[Specimen]): List[Specimen] = {
 
-      val firstIndex = Random.nextInt(toBreed.size)
-      val secondIndex = Random.nextInt(toBreed.size)
+      val firstIndex = Random.nextInt(currList.size)
+      val secondIndex = Random.nextInt(currList.size)
 
       if (iterSize == 0) currList
       else {
