@@ -32,6 +32,7 @@ val specimens: List[Specimen] = S1 :: S2 :: S3 .....
 val population: Population = Population(specimens.size, specimens)
 // run the GASolver
 GASolver.solve(population)
+...
 ```
 
 # Configurations
