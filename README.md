@@ -12,7 +12,7 @@ for creating a random population and solving according to that. If you want to g
 ```scala
 ...
 // somewhere in your main
-val nn1 = NeuralNetworkModel(List[64, 128, 256], // nodes based on their positions on the respective layer size
+val nn1 = NeuralNetworkModel(List[64, 128, 256], // a simple node list
                              3, // layer size
                              "relu", // activation function. Only relu and elu is supported as of now
                              "adam", // updater (or optimizer, in Keras terminology) Only ADAM and RMSPROP is supported
