@@ -94,18 +94,10 @@ object Population {
       val secondIndex = Random.nextInt(toBreed.size)
 
       if (iterSize == 0) {
-        (toBreed(0) breed toBreed(1)) :: currList
+        (toBreed(firstIndex) breed toBreed(firstIndex)) :: currList
       } else {
-
-        if (toBreed(firstIndex) == toBreed(secondIndex)) {
-          go(size - 1, (toBreed(Random.nextInt(toBreed.size)) breed toBreed(secondIndex)) :: currList)
-        } else {
-          go(size - 1, (toBreed(firstIndex) breed toBreed(secondIndex)) :: currList)
-        }
+        go(size - 1, (toBreed(firstIndex) breed toBreed(secondIndex)) :: currList)
       }
-
-
-      go(toBreed.size, toBreed)
     }
 
     go(size, toBreed)

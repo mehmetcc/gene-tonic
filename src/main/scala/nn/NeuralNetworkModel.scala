@@ -28,7 +28,6 @@ case class NeuralNetworkModel(nodes: List[Int],
                               activation: String,
                               optimizer: String,
                               accuracy: Double)
-}
 
 object NeuralNetworkModel {
 
