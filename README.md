@@ -12,11 +12,11 @@ for creating a random population. If you want to generate your own population, y
 ```scala
 ...
 // somewhere inside your main
-case class NeuralNetworkModel(List[64, 128, 256], // nodes based on their positions on the respective layer size
-                              3, // layer size
-                              "relu", // activation function. Only relu and elu is supported as of now
-                              "adam", // updater (or optimizer, in Keras terminology) Only ADAM and RMSPROP is supported
-                              0.0) // accuracy, initially 0
+val nn1 = NeuralNetworkModel(List[64, 128, 256], // nodes based on their positions on the respective layer size
+                             3, // layer size
+                             "relu", // activation function. Only relu and elu is supported as of now
+                             "adam", // updater (or optimizer, in Keras terminology) Only ADAM and RMSPROP is supported
+                             0.0) // accuracy, initially set to 0
 ...
 ```
 
