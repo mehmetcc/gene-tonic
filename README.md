@@ -35,7 +35,7 @@ GASolver.solve(population)
 ```
 
 # Configurations
-There are two configurations in  nn and ga subdirectories, which are essentially Objects that contain several fields. Hopefully, in the future I would have the chance to implement a JSON based approach.
+There are two configurations in  nn and ga subdirectories, which are essentially Objects that contain several fields. In the future I would like to implement a JSON based approach.
 
 # Benchmarks
 ```scala
