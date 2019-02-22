@@ -37,6 +37,9 @@ GASolver.solve(population)
 # Configurations
 There are two configurations in  nn and ga subdirectories, which are essentially Objects that contain several fields. In the future I would like to implement a JSON based approach.
 
+# Running different datasets
+Currently gene-tonic is only able to solve MNIST dataset. You can change the code so that it would allow different datasets other than MNIST.
+
 # Benchmarks
 ```scala
 // ToDo
