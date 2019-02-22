@@ -11,7 +11,7 @@ GASolver.solve()
 for creating a random population and solving according to that random population. If you want to generate your own population, you might want to model your neural network first: 
 ```scala
 ...
-// somewhere inside your main
+// somewhere in your main
 val nn1 = NeuralNetworkModel(List[64, 128, 256], // nodes based on their positions on the respective layer size
                              3, // layer size
                              "relu", // activation function. Only relu and elu is supported as of now
