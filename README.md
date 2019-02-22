@@ -8,10 +8,10 @@ Running is pretty straightforward. You just have to import GASolver then run
 ```scala
 GASolver.solve()
 ```
-for creating a random population. If you want to generate your own population, you might want to model your neural network first: 
+for creating a random population and solving according to that random population. If you want to generate your own population, you might want to model your neural network first: 
 ```scala
 ...
-// somewhere inside your main
+// somewhere in your main
 val nn1 = NeuralNetworkModel(List[64, 128, 256], // nodes based on their positions on the respective layer size
                              3, // layer size
                              "relu", // activation function. Only relu and elu is supported as of now
@@ -36,6 +36,9 @@ GASolver.solve(population)
 
 # Configurations
 There are two configurations in  nn and ga subdirectories, which are essentially Objects that contain several fields. In the future I would like to implement a JSON based approach.
+
+# Running different datasets
+Currently gene-tonic is only able to solve MNIST dataset. You can change the code so that it would allow different datasets other than MNIST.
 
 # Benchmarks
 ```scala
