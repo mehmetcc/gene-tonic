@@ -34,7 +34,6 @@ case class Specimen(val model: NeuralNetworkModel) {
       * so I guess this is a ToDo as well, finding a bearable solution for method naming problem
       */
     val that = other.model
-    // ToDo change after neural network integration
     val layerSize = choice[Int](model.layerSize, that.layerSize)
     val nodes= choice[List[Int]](model.nodes, that.nodes).take(layerSize)
     val activation = choice[String](model.activation, that.activation)
