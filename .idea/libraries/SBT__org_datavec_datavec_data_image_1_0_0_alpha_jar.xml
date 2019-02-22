@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: org.datavec:datavec-data-image:1.0.0-alpha:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.datavec/datavec-data-image/jars/datavec-data-image-1.0.0-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.datavec/datavec-data-image/srcs/datavec-data-image-1.0.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

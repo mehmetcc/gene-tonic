@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: uk.com.robust-it:cloning:1.9.3:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/uk.com.robust-it/cloning/bundles/cloning-1.9.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/uk.com.robust-it/cloning/srcs/cloning-1.9.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

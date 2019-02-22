@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: org.deeplearning4j:nearestneighbor-core:1.0.0-alpha:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.deeplearning4j/nearestneighbor-core/jars/nearestneighbor-core-1.0.0-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.deeplearning4j/nearestneighbor-core/srcs/nearestneighbor-core-1.0.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

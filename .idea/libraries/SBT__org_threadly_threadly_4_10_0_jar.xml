@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: org.threadly:threadly:4.10.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.threadly/threadly/jars/threadly-4.10.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.threadly/threadly/srcs/threadly-4.10.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
