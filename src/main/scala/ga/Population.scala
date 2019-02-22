@@ -16,22 +16,16 @@ import scala.util.Random
   * A generic class for all population types possible
   * When mutated or cross-bred, it would return another population class with same parameters
   *
-  * @param populationSize: size of the population
+  * @param populationSize : size of the population
   */
 case class Population(populationSize: Int, specimens: List[Specimen]) {
   /**
-    * Sort by fitness in decreasing order
-    *
-    * @return Sorted Population in decreasing order
-    */
-  def sortByFitness(): Population = Population(populationSize, specimens.sortBy(_.fitness).reverse)
-
-  /**
     * Evolves the population by selecting the best, then by randomly selecting, mutating and cross breeding some of the
     * remaining specimens
-    * @param retain retain size of the best specimens
+    *
+    * @param retain               retain size of the best specimens
     * @param selectionProbability probability of selecting randomly
-    * @param mutationRate the mutation probability
+    * @param mutationRate         the mutation probability
     * @return evolved specimen
     */
   def evolve(retain: Int, selectionProbability: Double, mutationRate: Double): Population = {
@@ -45,16 +39,16 @@ case class Population(populationSize: Int, specimens: List[Specimen]) {
       _ => selectionProbability >= Random.nextDouble()
     }
 
-    val remainingAfterSecondSelection = specimens.filterNot{
-      retainedSpeciesAfterFitnessSelection ++ retainedSpeciesAfterRandomSelection contains(_)
+    val remainingAfterSecondSelection = specimens.filterNot {
+      retainedSpeciesAfterFitnessSelection ++ retainedSpeciesAfterRandomSelection contains (_)
     }
 
     // selecting randomly by mutating them
     val retainedSpeciesAfterMutation = for (e <- remainingAfterSecondSelection if mutationRate >= Random.nextDouble()) yield e.mutate()
 
     // last but not least, let's make cross breeding and end the evolution
-    val remainingAfterThirdSelection = specimens.filterNot{
-      retainedSpeciesAfterFitnessSelection ++ retainedSpeciesAfterRandomSelection ++ retainedSpeciesAfterMutation contains(_)
+    val remainingAfterThirdSelection = specimens.filterNot {
+      retainedSpeciesAfterFitnessSelection ++ retainedSpeciesAfterRandomSelection ++ retainedSpeciesAfterMutation contains (_)
     }
 
     val retainedSpeciesAfterBreeding = Population.breedInBatches(remainingAfterThirdSelection.size, remainingAfterThirdSelection)
@@ -68,12 +62,20 @@ case class Population(populationSize: Int, specimens: List[Specimen]) {
     Population(finalSpeciesList.size, finalSpeciesList)
   }
 
+  /**
+    * Sort by fitness in decreasing order
+    *
+    * @return Sorted Population in decreasing order
+    */
+  def sortByFitness(): Population = Population(populationSize, specimens.sortBy(_.fitness).reverse)
+
 }
 
 object Population {
 
   /**
     * Creates a random population of specimens
+    *
     * @param populationSize the size of the total population
     * @return the newly created population
     */
@@ -84,7 +86,8 @@ object Population {
 
   /**
     * A helper method for cross-breeding
-    * @param size of the current population
+    *
+    * @param size    of the current population
     * @param toBreed the list of specimens to be bred
     * @return a list of new specimens
     */
@@ -92,8 +95,8 @@ object Population {
 
     def go(iterSize: Int, currList: List[Specimen]): List[Specimen] = {
 
-      val firstIndex = Random.nextInt(toBreed.size-1)
-      val secondIndex = Random.nextInt(toBreed.size-1)
+      val firstIndex = Random.nextInt(toBreed.size - 1)
+      val secondIndex = Random.nextInt(toBreed.size - 1)
 
       if (iterSize == 0) currList
       else {

@@ -1,18 +1,17 @@
 package nn
 
 import com.typesafe.scalalogging.LazyLogging
-import org.deeplearning4j.datasets.iterator.impl.{ListDataSetIterator, MnistDataSetIterator}
+import org.deeplearning4j.datasets.iterator.impl.MnistDataSetIterator
 import org.deeplearning4j.nn.api.OptimizationAlgorithm
 import org.deeplearning4j.nn.conf.Updater
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener
-
-import scala.util.Random
-import org.deeplearning4j.nn.conf.Updater.{ADAM, RMSPROP}
 import org.deeplearning4j.scalnet.layers.core.Dense
 import org.deeplearning4j.scalnet.models.Sequential
 import org.deeplearning4j.scalnet.regularizers.L2
 import org.nd4j.linalg.activations.Activation
 import org.nd4j.linalg.lossfunctions.LossFunctions.LossFunction
+
+import scala.util.Random
 
 /**
   * DAVID DAVENPORT'UN ASKERLERİYİZ
@@ -20,7 +19,6 @@ import org.nd4j.linalg.lossfunctions.LossFunctions.LossFunction
   * @author Mehmet Can Altuntaş
   *         github.com/mehmetcc
   */
-
 
 
 case class NeuralNetworkModel(nodes: List[Int],
@@ -33,6 +31,7 @@ object NeuralNetworkModel {
 
   /**
     * Creates a random neural network model
+    *
     * @return randomly created neural network model
     */
   def createRandomNeuralNetworkModel(): NeuralNetworkModel = {
@@ -51,6 +50,7 @@ object NeuralNetworkBuilder extends LazyLogging {
 
   /**
     * Build a dl4j neural network from the given specifications
+    *
     * @param nnModel contains the necessary information for creating and training the neural network
     * @return the neural network model, this time with accuracy calculated
     */
@@ -76,10 +76,10 @@ object NeuralNetworkBuilder extends LazyLogging {
         activation = Activation.RELU,
         regularizer = L2(NeuralNetworkConfigurations.learningRate * NeuralNetworkConfigurations.decay)))
       // hidden layers
-      for (i <- 1 to layerSize-2) {
+      for (i <- 1 to layerSize - 2) {
         model.add(Dense(nodes(i),
-                  activation = Activation.RELU,
-                  regularizer = L2(NeuralNetworkConfigurations.learningRate * NeuralNetworkConfigurations.decay)))
+          activation = Activation.RELU,
+          regularizer = L2(NeuralNetworkConfigurations.learningRate * NeuralNetworkConfigurations.decay)))
       }
       // output layer
       model.add(Dense(NeuralNetworkConfigurations.outputSize, activation = Activation.SOFTMAX))

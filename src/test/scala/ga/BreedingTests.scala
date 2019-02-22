@@ -1,7 +1,6 @@
 package ga
 
 import nn.NeuralNetworkModel
-import org.deeplearning4j.nn.api.NeuralNetwork
 
 /**
   * DAVID DAVENPORT'UN ASKERLERİYİZ
@@ -10,9 +9,9 @@ import org.deeplearning4j.nn.api.NeuralNetwork
   *         github.com/mehmetcc
   */
 object BreedingTests extends App {
-    val s1 = Specimen(NeuralNetworkModel(List(64, 64), 2, "relu", "rmsprop", 0.0))
-    val s2 = Specimen(NeuralNetworkModel(List(64, 64), 2, "elu", "adam", 0.0))
-    val s3 = s1 breed s2
+  val s1 = Specimen(NeuralNetworkModel(List(64, 64), 2, "relu", "rmsprop", 0.0))
+  val s2 = Specimen(NeuralNetworkModel(List(64, 64), 2, "elu", "adam", 0.0))
+  val s3 = s1 breed s2
 
-    println(s3)
+  println(s3)
 }

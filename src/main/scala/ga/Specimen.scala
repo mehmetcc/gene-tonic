@@ -1,10 +1,7 @@
 package ga
 
-import org.nd4j.linalg.activations.Activation
-import org.nd4j.linalg.learning.config.{Adam, IUpdater, RmsProp}
-import utils.RandomUtils.{choice, chooseWithIndex}
-
 import nn._
+import utils.RandomUtils.{choice, chooseWithIndex}
 
 import scala.util.Random
 
@@ -13,7 +10,7 @@ import scala.util.Random
   * A repr. class for a single specimen,
   * that many of them would consist a population
   *
-  * @param model: A Neural Network model, might be created randomly
+  * @param model : A Neural Network model, might be created randomly
   */
 case class Specimen(val model: NeuralNetworkModel) {
 
@@ -23,7 +20,7 @@ case class Specimen(val model: NeuralNetworkModel) {
     *
     * Notice that parameters are gender-neutral, as it should be ^^
     *
-    * @param other: The network to cross-breed with
+    * @param other : The network to cross-breed with
     */
   def breed(other: Specimen): Specimen = {
     // ToDo
@@ -35,7 +32,7 @@ case class Specimen(val model: NeuralNetworkModel) {
       */
     val that = other.model
     val layerSize = choice[Int](model.layerSize, that.layerSize)
-    val nodes= choice[List[Int]](model.nodes, that.nodes).take(layerSize)
+    val nodes = choice[List[Int]](model.nodes, that.nodes).take(layerSize)
     val activation = choice[String](model.activation, that.activation)
     val optimizer = choice[String](model.optimizer, that.optimizer)
 

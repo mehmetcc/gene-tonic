@@ -7,7 +7,7 @@ package nn
   *         github.com/mehmetcc
   */
 object NeuralNetworkConfigurations {
-  val height= 28
+  val height = 28
   val width = 28
   val numLinesToSkip = 0
   val delimiter = ','
