@@ -57,13 +57,15 @@ case class Population(populationSize: Int, specimens: List[Specimen]) {
       retainedSpeciesAfterFitnessSelection ++ retainedSpeciesAfterRandomSelection ++ retainedSpeciesAfterMutation contains(_)
     }
 
+    val retainedSpeciesAfterBreeding = Population.breedInBatches(remainingAfterThirdSelection.size, remainingAfterThirdSelection)
+
     val finalSpeciesList: List[Specimen] = retainedSpeciesAfterFitnessSelection ++
       retainedSpeciesAfterRandomSelection ++
       retainedSpeciesAfterMutation ++
-      Population.breedInBatches(remainingAfterThirdSelection.size, remainingAfterThirdSelection)
+      retainedSpeciesAfterBreeding
 
 
-    Population(populationSize, finalSpeciesList)
+    Population(finalSpeciesList.size, finalSpeciesList)
   }
 
 }
@@ -93,10 +95,9 @@ object Population {
       val firstIndex = Random.nextInt(toBreed.size)
       val secondIndex = Random.nextInt(toBreed.size)
 
-      if (iterSize == 0) {
-        (toBreed(firstIndex) breed toBreed(firstIndex)) :: currList
-      } else {
-        go(size - 1, (toBreed(firstIndex) breed toBreed(secondIndex)) :: currList)
+      if (iterSize == 0) currList
+      else {
+        go(size - 1, List(toBreed(firstIndex) breed toBreed(secondIndex)) ++ currList)
       }
     }
 
