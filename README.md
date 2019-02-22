@@ -8,7 +8,7 @@ Running is pretty straightforward. You just have to import GASolver then run
 ```scala
 GASolver.solve()
 ```
-for creating a random population and solving according to that random population. If you want to generate your own population, you might want to model your neural network first: 
+for creating a random population and solving according to that. If you want to generate your own population, you might want to model your neural network first: 
 ```scala
 ...
 // somewhere in your main
@@ -32,6 +32,7 @@ val specimens: List[Specimen] = S1 :: S2 :: S3 .....
 val population: Population = Population(specimens.size, specimens)
 // run the GASolver
 GASolver.solve(population)
+...
 ```
 
 # Configurations
