@@ -4,7 +4,7 @@ gene-tonic is a genetic algorithm implementation for optimizing neural networks.
 
 # How to Run
 
-running is pretty straightforward. You just have to import GASolver then run 
+Running is pretty straightforward. You just have to import GASolver then run 
 ```scala
 GASolver.solve()
 ```
