@@ -7,7 +7,7 @@ import ga.GASolver
   *         github.com/mehmetcc
   */
 
-class Application extends App {
+object Application extends App {
   val population = GASolver.solve().sortByFitness()
   population.specimens.foreach(println)
 }
